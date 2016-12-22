@@ -1,7 +1,16 @@
 .restaurants {
   @include margin(top 5rem);
+  @include mobile() {
+    &:first-child {
+      border: 0;
+      @include margin(top 0);
+    }
+    border-top: 1px solid $horizen-divider;
+    @include margin(top 2rem);
+    @include padding(top 2rem);
+  }
 
-  &>div:nth-child(1) {
+  &>.photo-d {
     @include padding(right 1.5rem);
     .photo-carousel img {
       border-radius: .5rem;
@@ -9,7 +18,7 @@
     }
   }
 
-  &>div:nth-child(2) {
+  &>.desc-d {
     position: relative;
     @include padding(right 1.5rem);
     &>em {
@@ -58,8 +67,68 @@
     } 
   }
 
-  &>div:nth-child(3) {
-    @include padding(left 1rem);
+  &>.photo-m {
+    position: relative;
+    .photo-carousel img {
+      border-radius: .5rem;
+      @include rwd-image(100%);
+    }
+        
+    ul {
+      width: 100%;
+      position: absolute;
+      bottom: 1rem;
+      @include margin(left auto right auto);
+      @include flex-align(space-around, center);
+      li {
+        border-radius: .5rem;
+        background: hsla(213, 15, 70, .6);
+        flex-direction: column;
+        box-sizing: border-box;
+        @include flex-align(space-around, center);
+        @include size(8.5rem 5rem);
+        @include font(size 1.4rem);
+        p {
+          @include font(size 1.4rem);
+          color: #fff;
+        }
+        em {
+          @include font(size 3rem);
+          font-weight: normal;
+          color: $brand-main;
+        }
+      }
+    }
+  }
+
+  &>.desc-m {
+    position: relative;
+    @include margin(top 1.5rem);
+    &>em {
+      display: inline-block;
+      @include font(size 3.6rem weight bold);
+      &+p {
+        @include font(size 1.8rem line-height $base-line-height);
+        @include padding(top 1em);
+      }
+      a {
+        color: $font-emphasis;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: default;
+      @include size(8rem null);
+    } 
+  }
+
+  &>.tag-list {
+    @include mobile() {
+      @include margin(top 1rem);
+    }
     dt, dd {
       display: inline-block;
       @include font(size 1.4rem);

@@ -4,7 +4,7 @@ import LikeButton from '../Restaurant/LikeButton';
 
 const RestaurantItem = ({restaurant, idx, children}) => (
   <div className="restaurants row">
-    <div className="cell-d-1-3 m-hidden">
+    <div className="photo-d cell-d-1-3 m-hidden">
       {/*<span className="item-num">{idx + 1}</span>*/}
       <div className="photo-carousel">
         <img src={restaurant.images[0].img_s} alt={restaurant.images[0].alt} />
@@ -19,7 +19,7 @@ const RestaurantItem = ({restaurant, idx, children}) => (
       </div>
       */}
     </div>
-    <div className="cell-d-1-3 m-hidden">
+    <div className="desc-d cell-d-1-3 m-hidden">
       <em><Link to={`restaurants/${restaurant.id}`}>{restaurant.name}</Link></em>
       <p><Link to={`restaurants/${restaurant.id}`}>{restaurant.description}</Link></p>
       <ul>
@@ -44,8 +44,7 @@ const RestaurantItem = ({restaurant, idx, children}) => (
       </ul>
       <LikeButton className='button' mylike={restaurant.my_like} toggleLike={null} />
     </div>
-
-    <div className="cell-m-1-1 d-hidden">
+    <div className="photo-m cell-m-1-1 d-hidden">
       {/*<span className="item-num">{idx + 1}</span>*/}
       <div className="photo-carousel">
         <img src={restaurant.images[0].img_s} alt={restaurant.images[0].alt} />
@@ -80,14 +79,12 @@ const RestaurantItem = ({restaurant, idx, children}) => (
         </li>
       </ul>
     </div>
-    <div className="cell-m-1-1 d-hidden">
+    <div className="desc-m cell-m-1-1 d-hidden">
       <em><Link to={`restaurants/${restaurant.id}`}>{restaurant.name}</Link></em>
       <p><Link to={`restaurants/${restaurant.id}`}>{restaurant.description}</Link></p>
       <LikeButton className='button' mylike={restaurant.my_like} toggleLike={null} />
     </div>
-
-
-    <div className="cell-d-1-3 cell-m-1-1">
+    <div className="tag-list cell-d-1-3 cell-m-1-1">
       <dl>
         <dt><i className="fa fa-tags" aria-label="태그"></i></dt>
         <dd>{restaurant.tags.map(tag => tag.name).join(', ')}</dd><br/>

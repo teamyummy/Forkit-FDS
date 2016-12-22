@@ -14,3 +14,5 @@ body {
 }
 
 @media (max-width:400px){html{font-size:8px;}}
+@media (min-width:401px) and (max-width:1024px) {html{font-size:9px;}}
+@media (min-width:1025px){html{font-size:$base-font-size;}}

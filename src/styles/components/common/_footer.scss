@@ -23,6 +23,7 @@
         @extend %clearfix;
         li {
           float: left;
+          @include font(weight normal);
           @include padding(right 1em);
         }
       }

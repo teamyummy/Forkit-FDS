@@ -33,6 +33,10 @@
     border-top: 1px solid $horizen-divider;
     @include margin(top 2rem);
     @include padding(top 2em);
+    @include mobile() {
+      @include margin(top 1rem);
+      @include padding(top 0);
+    }
     ul {
       @extend %clearfix;
       li {

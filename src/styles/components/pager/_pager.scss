@@ -2,13 +2,14 @@
   border-top: 1px solid $horizen-divider;
   @include margin(top 5rem);
   @include padding(top 2.5em);
-  &>:first-child {
-    @include flex-align(center, center);
+  @include mobile() {
+    @include margin(top 2rem);
   }
   ul {
-    display: inline-block;
+    display: table;
     border-radius: .5rem;
     @extend %clearfix;
+    @include margin(left auto right auto);
     li {
       float: left;
       a {
@@ -39,6 +40,18 @@
         color: $font-base;
         background: #fff;
       }
+    }
+  }
+  button {
+    display: table;
+    border-radius: 2rem;
+    color: #fff;
+    background: $brand-main;
+    @include margin(left auto right auto);
+    @include size(12rem 3rem);
+    @include font(size 1.4rem);
+    &>i {
+      @include margin(left .5rem);
     }
   }
 }
